@@ -16,7 +16,7 @@ pipeline {
         stage('Docker Push') {
             steps {
 		    withDockerRegistry(credentialsId: 'Demo-creds-DockerHub', url: '') {
-			    sh "docker image push atiemwenjoseph/pipeline:latest"
+			    sh "docker image push atiemwenjoseph/pipeline:python"
               }
           }
         }
