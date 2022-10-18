@@ -9,14 +9,14 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-		    sh "docker build -t atiemwenjoseph/pipeline:python ."
+		    sh "docker build -t atiemwenjoseph/pipeline:python2 ."
 		    sh "docker logout"
 	    }
 	}
         stage('Docker Push') {
             steps {
 		    withDockerRegistry(credentialsId: 'Demo-creds-DockerHub', url: '') {
-			    sh "docker image push atiemwenjoseph/pipeline:python"
+			    sh "docker image push atiemwenjoseph/pipeline:python2"
               }
           }
         }
