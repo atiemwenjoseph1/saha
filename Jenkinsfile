@@ -19,7 +19,7 @@ pipeline {
 			    sh "docker image push atiemwenjoseph/pipeline:python3"
               }
           }
-		stage('Trigger File Triggered') {
+	stage('Trigger File Triggered') {
 		steps {
 			build 'Trigger File'
 	    }
